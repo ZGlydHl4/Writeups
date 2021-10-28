@@ -44,7 +44,7 @@ I granted 7 challenges over 22 :
 >
 >  For the validation of this challenge you must submit the identifier Usine (factory) as a flag.
 
-Here we just have a QR code : 
+Here is the QR code : 
 
 ![QR code](/images/QRcode_medics.png)
 
