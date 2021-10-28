@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>ECW 2021 :: dirtyx</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="European Cyber Week organized by &#34;Pôle d&#39;Excellence CYBER&#34; and &#34;HOPSCOTCH CONGRÈS&#34;" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/ecw/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/red.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="/img/favicon/red.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="ECW 2021">
+<meta property="og:description" content="European Cyber Week organized by &#34;Pôle d&#39;Excellence CYBER&#34; and &#34;HOPSCOTCH CONGRÈS&#34;" />
+<meta property="og:url" content="/posts/ecw/" />
+<meta property="og:site_name" content="dirtyx" />
+
+  
+    <meta property="og:image" content="/img/favicon/red.png">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-10-27 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="red">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    dirtyx
+  </div>
+</a>
+
+    </div>
+    
+  </div>
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/posts/ecw/">ECW 2021</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-10-27
+        
+      </span>
+    
+    
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="/tags/ctf/">CTF</a>&nbsp;
+    
+    #<a href="/tags/jeopardy/">Jeopardy</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="european-cyber-week">European Cyber Week<a href="#european-cyber-week" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p><em>From October 8th, 2021 to October 24th, 2021</em></p>
+<p>I granted 7 challenges over 22 :</p>
+<ul>
+<li><a href="#response-team-1">Response Team 1</a></li>
+<li><a href="#response-team-2">Response Team 2</a></li>
+<li><a href="#nightly-planet-1">Nightly Planet 1</a></li>
+<li><a href="#nightly-planet-2">Nightly Planet 2</a></li>
+<li><a href="#qrmedix">QRmedix</a></li>
+<li><a href="#amovax">Amovax</a></li>
+<li><a href="#codiv-mafia">Codiv Mafia</a></li>
+</ul>
+<h2 id="response-team-1">Response Team 1<a href="#response-team-1" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="response-team-2">Response Team 2<a href="#response-team-2" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="nightly-planet-1">Nightly Planet 1<a href="#nightly-planet-1" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="nightly-planet-2">Nightly Planet 2<a href="#nightly-planet-2" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="qrmedix">QRmedix<a href="#qrmedix" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>A vaccination campaign has gone wrong in Benin. Following the injection of the vaccine some people died.</p>
+<p>It is argued that there could have been a problem in the plant packaging the vaccine.
+Only one box of this vaccine was found. A QRcode on the packaging has been preserved and internal sources told us that it is possible to find the number of the manufacturing site thanks to it.
+However this does not seem to work with a traditional QRCode reader and you have been given the task of rebuilding it. You must silence the rumors about this vaccine as soon as possible!</p>
+<p>For the validation of this challenge you must submit the identifier Usine (factory) as a flag.</p>
+</blockquote>
+<p>Here we just have a QR code :</p>
+<p><img src="/images/QRcode_medics.png" alt="QR code"></p>
+<p>As we can see, 2 eyes are missing in the QR code. So we just have to modify the image with Gimp or Photoshop by adding these 2 eyes in the top right corner and the bottom left corner.</p>
+<p><img src="/images/QRcode_medics_complete.png" alt="QR code complete"></p>
+<p>Right after doing this we can use <code>zbar-tools</code> to retrieve informations from the QR code :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">❯ zbarimg QRcode_medics_complete.png                    
+QR-Code:Denomination<span style="color:#f92672">=</span>Comirnaty;ID_serie<span style="color:#f92672">=</span>287475322;Fabrication_date<span style="color:#f92672">=</span>23/05/2021;DLC<span style="color:#f92672">=</span>22/11/2021;ID_Usine<span style="color:#f92672">=</span>77ce347e6cee6e765aa3b006504b6bfa
+scanned <span style="color:#ae81ff">1</span> barcode symbols from <span style="color:#ae81ff">1</span> images in 0,04 seconds
+</code></pre></div><p>The flag is : <code>ECW{77ce347e6cee6e765aa3b006504b6bfa}</code></p>
+<h2 id="amovax">Amovax<a href="#amovax" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="codiv-mafia">Codiv Mafia<a href="#codiv-mafia" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+
+      </div></div>
+
+  
+  
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2021 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
