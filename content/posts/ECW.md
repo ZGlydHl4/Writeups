@@ -48,7 +48,7 @@ Here is the QR code :
 
 ![QR code](/images/QRcode_medics.png)
 
-As we can see, 2 eyes are missing in the QR code. So we just have to modify the image with Gimp or Photoshop by adding these 2 eyes in the top right corner and the bottom left corner. 
+As we can see, 2 eyes are missing in the QR code. So we just have to modify the image with Gimp or Photoshop by adding these 2 eyes at the top right corner and the bottom left corner. 
 
 ![QR code complete](/images/QRcode_medics_complete.png)
 
